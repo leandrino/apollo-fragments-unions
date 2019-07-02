@@ -1,0 +1,15 @@
+  fragment characterFields on Character {
+    ... on Dragon {
+      element
+    }
+    ... on Human {
+      weapon
+    }
+  }
+  query {
+    characters {
+      __typename
+      name
+      ...characterFields
+    }
+  }
