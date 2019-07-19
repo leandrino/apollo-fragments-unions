@@ -1,4 +1,4 @@
-const { GraphQLServer } = require('graphql-yoga')
+const { GraphQLServer } = require("graphql-yoga");
 
 const typeDefs = `
   interface Character {
@@ -24,7 +24,7 @@ const typeDefs = `
   type Query {
     characters: [Character]
   }
-`
+`;
 
 const resolvers = {
   Query: {
@@ -32,22 +32,22 @@ const resolvers = {
       return [
         {
           id: 20190101,
-          name: 'Fluffykins',
-          element: `fire`,
+          name: "Fluffykins",
+          element: `fire`
         },
         {
           id: 20190102,
-          name: 'Varus',
+          name: "Varus",
           height: `1.8`,
-          weapon: 'Sword'
-        },
+          weapon: "Sword"
+        }
       ];
-    },
+    }
   },
   Character: {
-    __resolveType: obj => obj.element ? 'Dragon' : 'Human',
-  },
-}
+    __resolveType: obj => (obj.element ? "Dragon" : "Human")
+  }
+};
 
-const server = new GraphQLServer({ typeDefs, resolvers })
-server.start(() => console.log(`Server is running at http://localhost:4000`))
+const server = new GraphQLServer({ typeDefs, resolvers });
+server.start(() => console.log(`Server is running at http://localhost:4000`));
