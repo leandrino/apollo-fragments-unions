@@ -10,22 +10,20 @@
 </template>
 
 <script>
-  import { ALL_CHARACTERS_QUERY } from '../services/queries/characters'
+  import { mapState } from 'vuex';
   import CharacterItem from '../components/CharacterItem.vue'
 
   export default {
     name: 'Home',
-    data () {
-      return {
-        characters: [],
-        loading: 0
-      }
+    computed: {
+      ...mapState(['characters']),
+    },
+    beforeCreate() {
+      // `1` is the ID of the book we want to fetch.
+      this.$store.dispatch('fetchCharacters');
     },
     components: {
       CharacterItem
-    },
-    apollo: {
-      characters: ALL_CHARACTERS_QUERY
     }
   }
 </script>

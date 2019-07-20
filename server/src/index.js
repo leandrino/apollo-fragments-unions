@@ -33,13 +33,31 @@ const resolvers = {
         {
           id: 20190101,
           name: "Fluffykins",
-          element: `fire`
+          element: `frost`
         },
         {
           id: 20190102,
-          name: "Varus",
+          name: "Darius",
+          height: `1.8`,
+          weapon: "sword"
+        },
+        {
+          id: 20190103,
+          name: "Garen",
           height: `1.8`,
           weapon: "Sword"
+        },
+        {
+          id: 20190104,
+          name: "Mayin",
+          height: `1.8`,
+          weapon: "Fire"
+        },
+        {
+          id: 20190105,
+          name: "Backwolf",
+          height: `1.8`,
+          weapon: "Dagger"
         }
       ];
     }
