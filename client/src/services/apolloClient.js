@@ -12,11 +12,7 @@ const httpLink = new HttpLink({
 const fragmentMatcher = new IntrospectionFragmentMatcher({
     introspectionQueryResultData: {
         __schema: {
-            types: [{
-                kind: 'UNION',
-                name: 'characters',
-                possibleTypes: [{ name: 'element' }, { name: 'weapon' }]
-                }]
+            types: []
             }
         }
 });

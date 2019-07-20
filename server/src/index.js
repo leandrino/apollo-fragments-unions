@@ -51,7 +51,7 @@ const resolvers = {
           id: 20190104,
           name: "Mayin",
           height: `1.8`,
-          weapon: "Fire"
+          element: "Fire"
         },
         {
           id: 20190105,
