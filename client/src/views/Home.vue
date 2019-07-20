@@ -1,17 +1,13 @@
 <template>
-  <div>
+  <div class="home">
     <div v-if="$apollo.loading">Loading...</div>
-    <character-item
-            v-for="character in characters"
-            :key="character.id"
-            :character="character">
-    </character-item>
+    <character-list :characters="characters"></character-list>
   </div>
 </template>
 
 <script>
   import { mapState } from 'vuex';
-  import CharacterItem from '../components/CharacterItem.vue'
+  import CharacterList from '../components/CharacterList.vue'
 
   export default {
     name: 'Home',
@@ -19,11 +15,19 @@
       ...mapState(['characters']),
     },
     beforeCreate() {
-      // `1` is the ID of the book we want to fetch.
       this.$store.dispatch('fetchCharacters');
     },
     components: {
-      CharacterItem
+      CharacterList
     }
   }
 </script>
+
+<style type="scss">
+  @media screen and (min-width: 1440px) {
+    .home {
+      margin: 0 auto;
+      width: 1440px;
+    }
+  }
+</style>
